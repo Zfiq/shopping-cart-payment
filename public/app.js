@@ -58,7 +58,7 @@ var total_quantity = 0;
 var totalout = 0;
 var totalcost = 0;
 
-var Service_charge = 0.4;
+var Service_charge = 0.5;
 
 // Variables for FBDB
 
@@ -275,9 +275,9 @@ var drink_btn5 = document.getElementById("drinks-btn5");
 function burger_radio1() {
   document.getElementsByClassName("meal-text1")[0].innerHTML;
   var radio1 = document.querySelector('input[name="radio1"]:checked').value;
-  var regular_price = 2.5;
+  var regular_price = 5;
   var regular_text = "Regular ";
-  var meal_price = 3.5;
+  var meal_price = 3;
   var meal_text = "Meal € +";
 
   if (radio1 == "Regular") {
@@ -294,7 +294,7 @@ function burger_radio1() {
     var value = parseFloat(regular_price, 10) + meal_price;
     var col = document.getElementById("text1");
     col.style.color = "green";
-    document.getElementById("product-price1").innerHTML = value.toFixed(2);
+    document.getElementById("product-price1").innerHTML = value;
   } else {
     console.log("No option selected..");
   }
@@ -303,9 +303,9 @@ function burger_radio1() {
 function burger_radio2() {
   document.getElementsByClassName("meal-text2")[0].innerHTML;
   var radio1 = document.querySelector('input[name="radio2"]:checked').value;
-  var regular_price = 2.7;
+  var regular_price = 3;
   var regular_text = "Regular ";
-  var meal_price = 3.6;
+  var meal_price = 3;
   var meal_text = "Meal € +";
 
   if (radio1 == "Regular") {
@@ -319,7 +319,7 @@ function burger_radio2() {
     document.getElementsByClassName("meal-text2")[0].innerHTML =
       meal_text + meal_price;
     var value = parseFloat(regular_price, 10) + meal_price;
-    document.getElementById("product-price2").innerHTML = value.toFixed(2);
+    document.getElementById("product-price2").innerHTML = value;
     var col = document.getElementById("text2");
     col.style.color = "green";
   } else {
@@ -330,9 +330,9 @@ function burger_radio2() {
 function burger_radio3() {
   document.getElementsByClassName("meal-text3")[0].innerHTML;
   var radio3 = document.querySelector('input[name="radio3"]:checked').value;
-  var regular_price = 4.5;
+  var regular_price = 4;
   var regular_text = "Regular ";
-  var meal_price = 3.0;
+  var meal_price = 3;
   var meal_text = "Meal € +";
 
   if (radio3 == "Regular") {
@@ -346,7 +346,7 @@ function burger_radio3() {
     document.getElementsByClassName("meal-text3")[0].innerHTML =
       meal_text + meal_price;
     var value = parseFloat(regular_price, 10) + meal_price;
-    document.getElementById("product-price3").innerHTML = value.toFixed(2);
+    document.getElementById("product-price3").innerHTML = value;
     var col = document.getElementById("text3");
     col.style.color = "green";
   } else {
@@ -358,9 +358,9 @@ function burger_radio3() {
 function burger_radio4() {
   document.getElementsByClassName("meal-text4")[0].innerHTML;
   var radio4 = document.querySelector('input[name="radio4"]:checked').value;
-  var regular_price = 4.0;
+  var regular_price = 4;
   var regular_text = "Regular ";
-  var meal_price = 3.0;
+  var meal_price = 3;
   var meal_text = "Meal € +";
 
   if (radio4 == "Regular") {
@@ -374,7 +374,7 @@ function burger_radio4() {
     document.getElementsByClassName("meal-text4")[0].innerHTML =
       meal_text + meal_price;
     var value = parseFloat(regular_price, 10) + meal_price;
-    document.getElementById("product-price4").innerHTML = value.toFixed(2);
+    document.getElementById("product-price4").innerHTML = value;
     var col = document.getElementById("text4");
     col.style.color = "green";
   } else {
@@ -386,9 +386,9 @@ function burger_radio4() {
 function burger_radio5() {
   document.getElementsByClassName("meal-text5")[0].innerHTML;
   var radio4 = document.querySelector('input[name="radio5"]:checked').value;
-  var regular_price = 5.0;
+  var regular_price = 5;
   var regular_text = "Regular ";
-  var meal_price = 3.5;
+  var meal_price = 3;
   var meal_text = "Meal € +";
 
   if (radio4 == "Regular") {
@@ -402,7 +402,7 @@ function burger_radio5() {
     document.getElementsByClassName("meal-text5")[0].innerHTML =
       meal_text + meal_price;
     var value = parseFloat(regular_price, 10) + meal_price;
-    document.getElementById("product-price5").innerHTML = value.toFixed(2);
+    document.getElementById("product-price5").innerHTML = value;
     var col = document.getElementById("text5");
     col.style.color = "green";
   } else {
@@ -425,9 +425,9 @@ function burger_radio6() {
   document.getElementsByClassName("meal-text6")[0].innerHTML;
   var radio6 = document.querySelector('input[name="radio6"]:checked').value;
   var select_btn = document.getElementsByClassName("select-btn")[0];
-  var size_10_price = 5.0;
+  var size_10_price = 5;
   var size_10_text = "size 10 ";
-  var size_12_price = 6.0;
+  var size_12_price = 6;
   var size_12_text = "size 12 ";
   var size_16_price = 10;
   var size_16_text = "size 16";
@@ -463,7 +463,7 @@ function burger_radio6() {
 
     document.getElementsByClassName("meal-text6")[0].innerHTML = size_12_text;
     var value = parseFloat(0, 10) + size_12_price;
-    document.getElementById("product-price6").innerHTML = value.toFixed(2);
+    document.getElementById("product-price6").innerHTML = value;
   } else if (radio6 == "16") {
     // Change price FOR MEAL
     var customize_btn = document.getElementsByClassName("customize-btn")[0];
@@ -478,7 +478,7 @@ function burger_radio6() {
 
     document.getElementsByClassName("meal-text6")[0].innerHTML = size_16_text;
     var value = parseFloat(0, 10) + size_16_price;
-    document.getElementById("product-price6").innerHTML = value.toFixed(2);
+    document.getElementById("product-price6").innerHTML = value;
   } else {
     console.log("No option selected..");
   }
@@ -539,8 +539,8 @@ function updateCartPrice() {
     total = total + price * quantity;
 
     overAll_charge_del = total; // ADD DELIVERY CASH
-    overAll_charge_del_t_fee = total + Service_charge;
-    overAll_charge_collection_t_fee = total + Service_charge;
+    overAll_charge_del_t_fee = total;
+    overAll_charge_collection_t_fee = total;
     overAll_charge_collection = total + one_4_pounder_added_price;
 
     product_names = productnames;
@@ -688,7 +688,7 @@ function purchaseBtnClicked() {
   if (switchDelivery.checked == true && switch_online_pay.checked == true) {
     var final_price = 0;
     Del_or_Col = Delivery;
-    Delivery_charge = 3.5;
+    Delivery_charge = 3;
 
     final_price = overAll_charge_del_t_fee + Delivery_charge;
 
@@ -698,14 +698,12 @@ function purchaseBtnClicked() {
     document
       .getElementById("delivery-charge")
       .setAttribute("value", Delivery_charge);
-    document.getElementById("t-fee").setAttribute("value", Service_charge);
-    document
-      .getElementById("total-cost")
-      .setAttribute("value", final_price.toFixed(2));
+    document.getElementById("t_fee").setAttribute("value", Service_charge);
+    document.getElementById("total-cost").setAttribute("value", final_price);
     console.log("DELIVERY SERVICE CHARGE " + overAll_charge_del_t_fee);
   } else if (switchDelivery.checked == true && switch_cash.checked == true) {
     if (line1.value != "") {
-      Delivery_charge = 3.5;
+      Delivery_charge = 3;
       final_price = overAll_charge_del + Delivery_charge;
       document.getElementById("dialog-header").innerHTML = "Order Preview";
       document.getElementById("del-charge-Popup").style.display = "block";
@@ -738,12 +736,12 @@ function purchaseBtnClicked() {
     Del_or_Col = Collection;
     document.getElementById("address_form2").style.display = "block";
     document.getElementById("delivery-charge").style.display = "none";
-    document.getElementById("t-fee").setAttribute("value", Service_charge);
+    document.getElementById("t_fee").setAttribute("value", Service_charge);
     document
       .getElementById("subtotal")
       .setAttribute("value", overAll_charge_collection);
     document
-      .getElementById("total-cost")
+      .getElementById("total_cost")
       .setAttribute("value", overAll_charge_collection_t_fee);
 
     console.log("COLLECTION SERVICE CHARGE " + overAll_charge_collection_t_fee);

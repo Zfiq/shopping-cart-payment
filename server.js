@@ -12,6 +12,8 @@ var Secret_Key = process.env.API_KEY;
 const stripe = require("stripe")(Secret_Key);
 const urlencodedParser = bodyParser.urlencoded({ extended: false });
 
+let totalAmount = 0;
+let serviceCharge = 0;
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/Pform.html"); //  Listening to a Default page
 });
@@ -23,6 +25,9 @@ app.post("/", urlencodedParser, (req, res) => {
   console.log(req.body.expiry_month);
   console.log(req.body.expiry_year);
   console.log(req.body.cvc);
+  console.log(req.body.total_cost);
+  totalAmount = req.body.total_cost;
+  serviceCharge = req.body.t_fee;
   // Create Token before card every token for each card.
   // Create a PaymentIntent with the order amount and currency
 
@@ -56,7 +61,7 @@ app.post("/", urlencodedParser, (req, res) => {
           .then((customer) => {
             return stripe.charges
               .create({
-                amount: 7000, // Charing amount
+                amount: totalAmount + 0 + 0, // Charing amount
                 description: "Product name or description",
                 currency: "Eur",
                 customer: customer.id,
@@ -74,4 +79,4 @@ app.post("/", urlencodedParser, (req, res) => {
   );
 });
 
-app.listen(3000);
+app.listen(2000);

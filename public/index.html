@@ -60,10 +60,10 @@
         <div class="btn-box2"> <button class="calculate-btn">Calculate</button></div>
 
         <div class="del-popup">
-          <span class="popuptext" id="del-charge-Popup">Delivey Charge 3.50</span>
+          <span class="popuptext" id="del-charge-Popup">Delivey Charge 3</span>
         </div>
         <div class="service-popup">
-          <span class="popuptext" id="service-charge-Popup">Service Charge .40</span>
+          <span class="popuptext" id="service-charge-Popup">Service Charge .50</span>
         </div>
         <h1 class="cart-total">TOTAL</h1>
         <div style="color: aliceblue;">Eur</div><span class="total-price">0</span>
@@ -140,7 +140,7 @@
           <input type="radio" name="radio1" onclick="burger_radio1()" value="Regular">Regular<br>
           <input type="radio" name="radio1" onclick="burger_radio1()" value="Meal">Meal<br>
         </div>
-        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price1">2.50</span>
+        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price1">5</span>
           <div class="meal-text1" id="text1"></div>
         </div>
         <div class="item-description">Served with green salad, tomato sauce & mayonnaise </div>
@@ -156,7 +156,7 @@
           <input type="radio" name="radio2" onclick="burger_radio2()" value="Regular">Regular<br>
           <input type="radio" name="radio2" onclick="burger_radio2()" value="Meal">Meal<br>
         </div>
-        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price2">2.70</span>
+        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price2">2</span>
           <div class="meal-text2" id="text2"></div>
         </div>
         <div class="item-description">Served with green salad, tomato sauce & mayonnaise </div>
@@ -171,7 +171,7 @@
           <input type="radio" name="radio3" onclick="burger_radio3()" value="Regular">Regular<br>
           <input type="radio" name="radio3" onclick="burger_radio3()" value="Meal">Meal<br>
         </div>
-        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price3">4.50</span>
+        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price3">4</span>
           <div class="meal-text3" id="text3"></div>
         </div>
         <div class="item-description">Served with green salad, tomato sauce & mayonnaise </div>
@@ -185,7 +185,7 @@
           <input type="radio" name="radio4" onclick="burger_radio4()" value="Regular">Regular<br>
           <input type="radio" name="radio4" onclick="burger_radio4()" value="Meal">Meal<br>
         </div>
-        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price4">4.00</span>
+        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price4">4</span>
           <div class="meal-text4" id="text4"></div>
         </div>
         <div class="item-description">Served with green salad, tomato sauce & mayonnaise </div>
@@ -200,7 +200,7 @@
           <input type="radio" name="radio5" onclick="burger_radio5()" value="Regular">Regular<br>
           <input type="radio" name="radio5" onclick="burger_radio5()" value="Meal">Meal<br>
         </div>
-        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price5">5.00</span>
+        <div class="price-box"> <span class="eur">€ </span> <span class="product-price" id="product-price5">5</span>
           <div class="meal-text5" id="text5"></div>
         </div>
         <div class="item-description">Served with green salad, tomato sauce & mayonnaise </div>
@@ -222,7 +222,7 @@
           <input type="radio" name="radio6" onclick="burger_radio6()" value="16">16 <br>
         </div>
         <img style="display: none;" class="product-image" src="./images/Margherita-Pizza.png" alt="">
-        <div class="price-box"><span class="eur">€ </span> <span class="product-price" id="product-price6">5.00</span>
+        <div class="price-box"><span class="eur">€ </span> <span class="product-price" id="product-price6">5</span>
           <div class="meal-text6" id="text6"></div>
         </div>
         <div class="item-description">Regular base | Mozzarella cheese | Tomato sauce </div>
@@ -274,18 +274,18 @@
   <div class="form-popup2" id="address_form2">
     <form action="/" method="POST" class="form-container2" id="myForm">
       <h2 style="color: rgb(0, 60, 255); text-align: center;">Pay by Card</h2>
-      <p style="text-align: center;">Food and Drink </p>
+      <p style="text-align: center;display: none;">Food and Drink </p>
       <input type="text" id="subtotal" name="subtotal" value="" readonly
-        style="text-align: center; background-color: rgb(65, 166, 255); outline: none;">
+        style="display: none; text-align: center; background-color: rgb(65, 166, 255); outline: none;">
 
-      <p class="delivery-lable" style="text-align: center;">Delivery Charge </p>
+      <p class="delivery-lable" style="text-align: center;display: none;">Delivery Charge </p>
       <input type="text" id="delivery-charge" name="delivery-charge" value="" readonly
         style="text-align: center; background-color: rgb(65, 166, 255); outline: none;">
-      <p style="text-align: center;">Transaction fee </p>
-      <input type="text" id="t-fee" name="t-fee" value="" readonly
-        style="text-align: center; background-color: rgb(65, 166, 255); outline: none;">
+      <p style="text-align: center;background-color: rgb(65, 166, 255);">Transaction fee 0</p>
+      <input type="text" id="t_fee" name="t_fee" value="" readonly
+        style="display: none; text-align: center; background-color: rgb(65, 166, 255); outline: none;">
       <p style="text-align: center;">Total Cost</p>
-      <input type="text" id="total-cost" name="total-cost" value="" readonly
+      <input type="text" id="total_cost" name="total_cost" value="" readonly
         style="text-align: center; background-color: rgb(65, 166, 255); outline: none;">
 
 
@@ -422,6 +422,7 @@
     }
   </script>
   <script src="app.js"></script>
+
 </body>
 <script>
   var cr = "";
